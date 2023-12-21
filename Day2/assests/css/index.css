@@ -1,0 +1,98 @@
+
+/* all selecter:*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /*when is over flow it will be hidden*/
+}
+.contener{
+    width: 80%;
+    margin: 0 auto;
+    padding: auto;
+}
+
+/* ================Logo-sec========================= */
+.Logo-sec{
+    background-color: #B2A59B;
+    /*#607274*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.Logo-sec img{
+   border-radius: 50%;
+   width: 150px;
+   right: 150px;
+  
+}
+.Logo-sec a{
+    margin-left: 10px;
+    /*padding-left: 70px;*/
+    text-decoration: none;
+   
+}
+
+/* ================sec-2 ========================= */
+.sec-2flix{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.personal{
+  /*border: 1px dashed black ;*/
+  width:150px ;
+  height: 150px;
+
+}
+
+.personal img{
+
+    border-radius: 50%;
+    width: 150px;
+    right: 150px;
+}
+
+.sec-2 p{
+    margin-bottom: 70px;
+    font-size:medium;
+    font-style:normal;
+    color: midnightblue;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    border: 3px solid green;
+   }
+
+/* ================body========================= */
+body{
+    background-color: #DED0B6;
+  
+}
+
+/* ================sec-1========================= */
+.sec-1{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size:larger;
+    font-style: italic;
+    color: #000;
+    text-align: center;
+    font-family: "Trirong", serif;
+    }
+
+/* ================sec-3========================= */
+.sec-3 {
+    font-size:medium;
+    font-style:normal;
+    color:#607274;
+ 
+}
+
+.sec-3 p {
+    text-align: center;
+    border: 3px solid green;
+  }
