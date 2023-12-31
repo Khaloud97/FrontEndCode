@@ -1,0 +1,10 @@
+{
+    "Name" : "Khaloud",
+    "Age":26,
+    "location":"AlBatenah",
+    "Order": {
+      "order1":["bbq", "Garlic", "burger"]
+    }
+    
+  }
+  

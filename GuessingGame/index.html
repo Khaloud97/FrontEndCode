@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Guessing Game</title>
+
+
+     <!-- ===================== My style ============================  -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('./img/imge icon.PNG'); 
+            background-size: cover;
+            background-position: center; 
+       }
+
+        h1 {
+          color: #333;
+          font-weight: bold;
+        }
+    
+        p {
+          color: #3215ee;
+          font-weight: bold;
+
+        }
+    
+        input[type="text"] {
+          padding: 8px;
+          margin-bottom: 10px;
+        }
+    
+        button {
+          padding: 10px 20px;
+          background-color: #3498db;
+          border: none;
+          color: white;
+          cursor: pointer;
+        }
+    
+        button:hover {
+          background-color: #2980b9;
+        }
+    
+        img{
+            width: 150px;
+            height: 150px;
+        }
+
+        #hint {
+          font-weight: bold;
+          margin-top: 20px;
+          color: #900;
+          font-weight: bold;
+        }
+    
+        #attempts {
+          margin-top: 10px;
+          color: #124728;
+          font-weight: bold;
+        }
+         /* Container styling */
+    
+  .container {
+    background-color: rgba(149, 171, 243, 0.3); /* استخدم قيمة rgba() لتحديد اللون والشفافية */
+    padding: 10px;
+   
+    }
+      </style>
+</head>
+
+<body>
+    <div class="container"> 
+
+    <h1>Random Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="text" id="guessInput">
+    <button onclick="checkGuess()">Submit Guess</button>
+    <p id="hint"></p>
+    <p id="attempts"></p>
+    <button onclick="resetGame()">Play Again</button>
+    </div>
+    
+
+    <!-- ===================== My script ============================  -->
+    <script>
+      let randomNumber;
+      let attempts = 0;
+  
+      function startGame() {
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log('Random number:', randomNumber);
+      }
+  
+      function checkGuess() {
+        const guess = parseInt(document.getElementById('guessInput').value);
+        const hint = document.getElementById('hint');
+        const attemptsDisplay = document.getElementById('attempts');
+  
+        if (!randomNumber) {
+          startGame();
+        }
+  
+        if (guess === randomNumber) {
+          hint.textContent = `Congratulations! You guessed the correct number (${randomNumber})!`;
+          attempts++;
+          attemptsDisplay.textContent = `Number of attempts: ${attempts}`;
+          randomNumber = null; // To Reset the random number after correct guess
+        } else if (guess > randomNumber) {
+          hint.textContent = 'Wrong guess. Try again! Guess a lower number.';
+          attempts++;
+          attemptsDisplay.textContent = `Number of attempts: ${attempts}`;
+        } else {
+          hint.textContent = 'Wrong guess. Try again! Guess a higher number.';
+          attempts++;
+          attemptsDisplay.textContent = `Number of attempts: ${attempts}`;
+        }
+      }
+  
+      function resetGame() {
+        randomNumber = null;
+        attempts = 0;
+        document.getElementById('guessInput').value = '';
+        document.getElementById('hint').textContent = '';
+        document.getElementById('attempts').textContent = '';
+      }
+  
+      // Initialize the game on page load
+      window.onload = startGame;
+    </script>
+  </body>
+  </html>
